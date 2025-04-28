@@ -1,5 +1,7 @@
 # NarraTone
 
+update the requirements the isntall is massive
+
 # 1. Create virtual environment
 
 python -m venv venv
@@ -9,6 +11,10 @@ python -m venv venv
 # On Windows CMD:
 
 venv\Scripts\activate
+
+# On linux:
+
+venv/bin/activate
 
 # Or on PowerShell (after setting execution policy):
 
