@@ -2,7 +2,7 @@ from transformers import pipeline
 
 class MoodDetector:
     def __init__(self):
-        self.labels = ["sad", "happy", "fight", "romantic", "tense"]
+        self.labels = ["base", "sad", "tense", "epic_battle"]
         self.classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
 
     def detect_mood(self, text):
