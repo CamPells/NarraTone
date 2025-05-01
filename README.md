@@ -1,29 +1,24 @@
 # NarraTone
 
-update the requirements the isntall is massive
+NarraTone detects the mood of a paragraph and plays music that matches it.
 
-# 1. Create virtual environment
+## What it does
 
-python -m venv venv
+- Uses a pre-trained AI model (facebook/bart-large-mnli) to classify paragraph mood
+- Plays .mp3 files from a folder based on the detected mood
+- Includes a simple GUI to paste text and listen
 
-# 2. Activate virtual environment
+## Moods Supported
 
-# On Windows CMD:
+- sad
+- happy
+- scary
+- fight
+- neutral
 
-venv\Scripts\activate
+## Setup
 
-# On linux:
-
-venv/bin/activate
-
-# Or on PowerShell (after setting execution policy):
-
-.\venv\Scripts\Activate
-
-# 3. Install requirements
-
-pip install transformers torch
-
-# 4. Run the app
-
-python main.py
+1. Clone the repository
+2. Create and activate a virtual environment
+3. Install dependencies
+4. (Linux only) Install tkinter separately if needed
