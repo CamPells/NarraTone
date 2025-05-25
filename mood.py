@@ -1,12 +1,12 @@
 from transformers import pipeline
 
-class MoodDetector:
-    def __init__(self):
-        self.labels = ["sad", "happy", "fight", "romantic", "tense"]
-        self.classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
+emotion_detector = pipeline(
+    "text-classification",
+    model="j-hartmann/emotion-english-distilroberta-base",
+    return_all_scores=True
+)
 
-    def detect_mood(self, text):
-        result = self.classifier(text, self.labels)
-        top_mood = result['labels'][0]
-        confidence = result['scores'][0]
-        return top_mood, confidence
+def get_mood(text):
+    result = emotion_detector(text)[0]  # Get list of scores
+    best = max(result, key=lambda x: x["score"])
+    return best["label"]
